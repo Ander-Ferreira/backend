@@ -1,5 +1,5 @@
 qualquer = 5
-qualquer2 = 2
+qualquer2 = 22
 entrada  = int(input('Digite um número'))
 
 if (entrada >= qualquer):
