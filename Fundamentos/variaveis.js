@@ -19,7 +19,7 @@ console.log('Nome: ' + nome)
 console.log('Aprovado? ' + aprovado)
 
 // ctrl + ; para comentar, atalho
-/* comentário mútiplas linhas shift + alt + a */
+/* comentário múltiplas linhas shift + alt + a */
 
 
 
