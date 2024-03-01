@@ -1,10 +1,10 @@
-const readline = require('readline');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const prompt = require('prompt-sync') ();
 
-rl.question('Qual o seu nome? ', (name) => {
-  console.log(`Olá, ${name}!`);
-});
+const nome = prompt('Qual é o seu nome?')
+
+console.log('Olá ' + nome)
+
+const idade = prompt('Qual é a sua idade?')
+
+console.log('Você possui ' + idade + 'anos')
