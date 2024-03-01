@@ -62,7 +62,7 @@ if(media >= 5){
 
 // Comando para transformar uma pasta em projeto: npm init
 // site para criar gitignore.io
-// instala bilbioteca prompt sync: npm install prompt-sync
+// instala biblioteca prompt sync: npm install prompt-sync
 
 
 
