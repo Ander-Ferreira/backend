@@ -25,3 +25,4 @@ const eleitoral = function(total, percentual, percentual2, percentual3){
 }
 
 eleitoral()
+
