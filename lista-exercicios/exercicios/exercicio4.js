@@ -13,7 +13,7 @@ const impostos = 45
 
 const custoFinal = function(totalImpostos, total){
     totalImpostos = distribuidor + impostos
-    console.log(`Você está pagando um total de ${totalImpostos}% de Impotos e taxas de fabricantes`)
+    console.log(`Você está pagando um total de ${totalImpostos}% de Impostos e taxas de fabricantes`)
     total = ((preco * totalImpostos) / 100) + preco
     console.log(`O preço final de seu veículo ficará ${total}`)
     return
