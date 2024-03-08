@@ -10,7 +10,7 @@ let valorCarro = 25000
 
 let carrosVendidos = Number(prompt('Digite o número de carros que vendeu: '))
 
-const salarioFunci = function(valorTotalVendas, salarioTotal, valorSeparado, salarioFinal){
+const salarioFunci = function(valorTotalVendas, salarioTotal, valorSeparado){
 
 
     console.log(`Você vendeu um total de ${carrosVendidos}`)
