@@ -10,26 +10,28 @@ let valorCarro = 25000
 
 let carrosVendidos = Number(prompt('Digite o número de carros que vendeu: '))
 
-const salarioFunci = function(valorTotalVendas, salarioTotal, valorSeparado){
+const salarioFunci = function(valorTotalVendas, salarioTotal, valorSeparado, comissaoDe5){
 
 
-    console.log(`Você vendeu um total de ${carrosVendidos}`)
+    console.log(`Você vendeu um total de ${carrosVendidos}, custando ${valorCarro} cada.`)
     
     valorTotalVendas = valorCarro * carrosVendidos
+
+    comissaoDe5 = (valorTotalVendas * 5) / 100
 
     console.log(`Seu valor de vendas totais foi de: ${valorTotalVendas.toFixed(2)}`)
 
     
-    salarioTotal = (comissaoFixa * carrosVendidos) + (salario * 0.05) + salario
+    salarioTotal = (comissaoFixa * carrosVendidos) + (comissaoDe5 + salario)
 
     //console.log(salarioTotal.toFixed(2))
 
-    valorSeparado = carrosVendidos / salarioTotal + 0.05
+    valorSeparado = (carrosVendidos / salarioTotal) + (comissaoFixa * 100)
 
-    console.log(`Seu salário fixo atual é de ${salario}, com um percentual total de ${(valorSeparado * 100).toFixed(2)}% por carro vendido, seu salário ficará ${salarioTotal}`)
     
-    //Nota mental para o futuro, fazer o cálculo final como fiz em valorSeparado para converter os decimais em porcentagem, não esquecer na próxima.
-
+    console.log(`Seu salário fixo atual é de ${salario}, com um percentual de ${(valorSeparado).toFixed(2)}% por carro vendido, com um adicinal de 5% (${comissaoDe5}) sobre o total do valor das vendas dos carros, salário ficará ${salarioTotal}`)
+    
+    //Erro de interpretação, refiz parte do código.
     
     
 
