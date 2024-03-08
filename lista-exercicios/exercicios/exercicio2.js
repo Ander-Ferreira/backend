@@ -21,7 +21,7 @@ const eleitoral = function(total, percentual, percentual2, percentual3){
     console.log(`O percentual de votos brancos é: ${percentual2.toFixed(2)}%`)
     percentual3 = (votosNulos / total) * 100
     console.log(`O percentual de votos nulos é: ${percentual3.toFixed(2)}%`)
-    
+    return
 }
 
 eleitoral()
