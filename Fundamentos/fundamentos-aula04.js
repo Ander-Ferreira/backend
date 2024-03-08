@@ -60,3 +60,4 @@ for(let contador = 1; contador <= 10; contador = contador + 1) {
 for (let i = 1; i <= 10; i++) {
     console.log(i)
 }
+
