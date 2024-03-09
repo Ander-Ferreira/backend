@@ -9,11 +9,12 @@ let salario = Number(prompt('Digite seu salário: '))
 let reajuste = Number(prompt('Digite o seu reajuste: '))
 
 const salarioTotal = function(total){
-    total = ((salario * reajuste) / 100) + salario
+    total = salario + (salario * reajuste / 100)
     console.log(`Seu salário era ${salario}, com o reajuste de ${reajuste}% ficou ${total}`)
 }
 
 salarioTotal()
+
 
 
 
