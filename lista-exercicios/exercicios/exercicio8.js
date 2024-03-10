@@ -4,9 +4,11 @@ d’água cilíndrica, sendo que o raio e a altura devem ser fornecidos.
 OBS: V = PI * Raio^2 * Altura
 */
 
-let raio = 7.6
+let prompt = require('prompt-sync')();
 
-let altura = 2
+let raio = Number.parseFloat(prompt('Digite o raio: '))
+
+let altura = Number(prompt('Digite a altura: '))
 
 const volume = function (vol){
     
