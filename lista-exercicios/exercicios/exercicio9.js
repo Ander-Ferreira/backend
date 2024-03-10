@@ -2,9 +2,11 @@
 9. Faça um script para somar dois números e multiplicar o resultado pelo primeiro número.
 */
 
-let numeroA = 2
+let prompt = require('prompt-sync')();
 
-let numeroB = 2
+let numeroA = Number(prompt('Digite um número: '))
+
+let numeroB = Number(prompt('Digite outro número: '))
 
 const soma = function(multi, adicao){
     adicao = (numeroA + numeroB) * numeroA
