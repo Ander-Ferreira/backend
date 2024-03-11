@@ -4,11 +4,11 @@ que cada um representa em relação ao total de eleitores. */
 
 let prompt = require('prompt-sync')();
 
-let votosValidos = 500
+let votosValidos = Number(prompt('Digite o valor de votos válidos'))
 
-let votosBrancos = 200
+let votosBrancos = Number(prompt('Digite o valor de votos Brancos'))
 
-let votosNulos = 60
+let votosNulos = Number(prompt('Digite o valor de votos Nulos'))
 
 const eleitoral = function(total, percentual, percentual2, percentual3){
     
