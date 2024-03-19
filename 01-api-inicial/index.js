@@ -119,6 +119,8 @@ app.listen(3000, () => {
 
 //Exercicio 01 modo query.params
 
+//Chamando no postman http://localhost:3000/exercicio1?nota1=5&nota2=3&nota4=3
+
 app.get('/exercicio1', (requisicao, resposta) =>{
 
     console.log(requisicao.query)
