@@ -222,6 +222,43 @@ app.get('/exercicio5', (requisicao, resposta) => {
 
 })
 
+/* 6. Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um script que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor. */
+
+app.get("/exercicio6", (requisicao, resposta) => {
+      console.log(resposta.query)
+
+      const salaFix = Number(requisicao.query.salaFix)
+      const carrosVend = Number(requisicao.query.carrosVend)
+      const carrosVal = Number(requisicao.query.carrosVend)
+      const comissaoFix = 0.1
+
+      const valorTotalCarros = carrosVal * carrosVend
+      const comissaoDe5 = (valorTotalCarros * 5) / 100
+      const salTotal = (comissaoFix * carrosVend) + (comissaoDe5 + salaFix)
+
+      resposta.send(`O salário total do vendedor com suas comissões fica ${salTotal}`)
+
+
+
+      
+
+      
+
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
 
 
 
@@ -233,3 +270,5 @@ app.listen(3000, () => {
 
 
 })
+
+

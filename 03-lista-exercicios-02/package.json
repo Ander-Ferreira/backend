@@ -1,16 +1,16 @@
 {
-  "name": "01-api-inicial",
+  "name": "03-lista-exercicios-02",
   "version": "1.0.0",
+  "description": "lista de exercícios 02, api com parametros, querys, requisições e respostas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "start":"nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.0",
+    "express": "^4.19.1",
     "nodemon": "^3.1.0"
-  },
-  "description": ""
+  }
 }

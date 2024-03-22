@@ -1,0 +1,113 @@
+const express = require('express')
+const app = express()
+const port = 3000
+const funcoes = require('./funcoes')
+
+//Middlewares
+app.use(express.json())
+
+//----------------------------------------------------------------------------------------
+
+/*
+1. Faça uma api para calcular o estoque médio de uma peça, 
+sendo que ESTOQUE MÉDIO = (QUANTIDADE MÍNIMA + QUANTIDADE MÁXIMA) /2.
+*/
+
+/*
+Postman: http://localhost:3000/exercicio1
+{
+    "minima": 20,
+    "maxima": 40
+}
+
+
+*/
+
+app.post('/exercicio1', (req, res)=>{
+    
+    const minima = req.body.minima
+    const maxima = req.body.maxima
+    const media = funcoes.exercicio1(minima, maxima)
+    
+    res.send(`O estoque médio é de ${media}`)
+
+
+})
+
+//----------------------------------------------------------------------------------------
+
+/*
+2. Uma empresa decide dar um aumento de 30% aos funcionários cujo salário é inferior a 1.000 reais. 
+Escreva uma api que receba o salário de um funcionário e imprima o valor do salário reajustado ou uma mensagem caso o funcionário não tenha direito ao aumento.
+*/
+
+app.post('/exercicio2', (req, res)=>{
+    const salario = req.body.salario
+    const saidaExercicio2 = funcoes.exercicio2(salario)
+
+    res.send(saidaExercicio2)
+
+
+
+})
+
+//----------------------------------------------------------------------------------------
+
+/*
+3. Escrever uma api que lê o nome de um vendedor, o seu salário fixo, o total de vendas por ele efetuadas 
+e o percentual que ganha sobre o total de vendas. Calcular o salário total do vendedor. 
+Escrever o nome do vendedor e seu salário total.
+*/
+
+app.post('/exercicio3', (req, res)=>{
+    const nome = req.body.nome
+    const salario = req.body.salario
+    const totalVendas = req.body.totalVendas
+
+    const saidaExercicio3 = funcoes.exercicio3(nome, salario, totalVendas)
+    res.send(saidaExercicio3)
+
+})
+
+
+//----------------------------------------------------------------------------------------
+
+/*
+4. Faça uma api que leia o nome de um piloto, uma distância percorrida em km e o tempo que o piloto levou para percorrê-la (em horas). O programa deve calcular a velocidade média - Velocidade = Distância / Tempo - em km/h, e exibir a seguinte frase: A velocidade média do <nome do piloto> foi <velocidade media calculada> km/h.
+*/
+
+app.post('/exercicio4', (req, res) => {
+    const nome = req.body.nome;
+    const distancia = req.body.distancia;
+    const tempoHoras = req.body.tempoHoras;
+
+   
+    const saidaExercicio4 = funcoes.exercicio4(nome, distancia, tempoHoras);
+
+    res.send(saidaExercicio4);
+});
+
+
+//----------------------------------------------------------------------------------------
+
+/*
+5. Faça uma api que calcule e imprima o salário reajustado de um funcionário de acordo com a seguinte regra:
+    • Salários até 2.000, reajuste de 50%
+    • Salários maiores que 2.000, reajuste de 30%
+*/
+
+app.post('/exercicio5', (req, res)=>{
+    const salario = req.body.salario
+    const saidaExercicio5 = funcoes.exercicio5(salario)
+    res.send(saidaExercicio5)
+})
+
+
+
+
+
+
+app.listen(3000, ()=>{
+    console.log('aplicação iniciada em http://localhost:3000')
+})
+
