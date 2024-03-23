@@ -86,6 +86,12 @@ function exercicio5(salario){
 
 }
 
+/*
+6. Construa uma api que calcule o peso ideal de uma pessoa. Dados de entrada: altura e sexo. Fórmulas para cálculo do peso:
+    • peso ideal de homem = (72,7 x altura) – 58
+    • peso ideal da mulher = (62,1 x altura) – 44,7
+*/
+
 function exercicio6(altura, sexo){
     if(sexo === "H"){
         const homem = (altura * 72.7) - 58
