@@ -86,9 +86,23 @@ function exercicio5(salario){
 
 }
 
+function exercicio6(altura, sexo){
+    if(sexo === "H"){
+        const homem = (altura * 72.7) - 58
+        return `Seu peso ideal é ${homem.toFixed(2)}`
+    }
+    
+    if(sexo === "M"){
+        const mulher = (altura * 62.1) - 44.7
+        return `Seu peso ideal é ${mulher.toFixed(2)}`
+        
+    }
+
+}
+
 
 
 
 module.exports = {
-    exercicio1, exercicio2, exercicio3, exercicio4, exercicio5
+    exercicio1, exercicio2, exercicio3, exercicio4, exercicio5, exercicio6
 }

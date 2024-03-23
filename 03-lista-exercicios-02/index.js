@@ -102,7 +102,25 @@ app.post('/exercicio5', (req, res)=>{
     res.send(saidaExercicio5)
 })
 
+//----------------------------------------------------------------------------------------
 
+/*
+6. Construa uma api que calcule o peso ideal de uma pessoa. Dados de entrada: 
+altura e sexo. Fórmulas para cálculo do peso:
+    • peso ideal de homem = (72,7 x altura) – 58
+    • peso ideal da mulher = (62,1 x altura) – 44,7
+*/
+
+app.post('/exercicio6', (req, res) =>{
+    //sexo use H ou M 
+    const altura = req.body.altura
+    const sexo = req.body.sexo
+
+    const saidaExercicio6 = funcoes.exercicio6(altura, sexo)
+    res.send(saidaExercicio6)
+
+
+})
 
 
 
