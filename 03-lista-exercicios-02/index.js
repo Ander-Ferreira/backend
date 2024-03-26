@@ -122,6 +122,56 @@ app.post('/exercicio6', (req, res) =>{
 
 })
 
+//----------------------------------------------------------------------------------------
+
+/*
+7. Faça uma api para ler o código e o preço de 15 produtos, calcular e escrever:
+    • O maior preço lido; e
+    • A média aritmética dos preços dos produtos.
+*/
+app.post('/exercicio7', (req, res)=>{
+    let corpo = req.body
+    let listaProdutos = []
+
+    //forEach é um for para arrays, produto é a variável que irá percorrer a array, é como a variável i
+    corpo.forEach(produto => {
+        listaProdutos.push(produto) //adiciona os valores à array, e produto enquanto percorre a array adicionará o próximo valor à array
+
+    })
+
+    //Somando
+    let soma = 0
+
+    listaProdutos.forEach(produto =>{
+        soma = soma + produto.preco //somará todos os preços da aba preços: de array
+    })
+
+    //Dividindo
+    const media = soma / listaProdutos.length
+
+    //Calcular maior preço
+
+    let maiorPreco = 0
+
+    listaProdutos.forEach(produto => {
+        if(produto.preco > maiorPreco){
+            maiorPreco = produto.preco
+
+        }
+    })
+
+    const resultado = {
+        precoMedio: media.toFixed(2),
+        maiorPreco: maiorPreco
+    }
+
+    res.json(resultado)
+    
+    
+    
+    })
+
+
 
 
 

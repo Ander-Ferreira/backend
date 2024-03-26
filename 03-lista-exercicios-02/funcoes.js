@@ -106,6 +106,21 @@ function exercicio6(altura, sexo){
 
 }
 
+/*
+7. Faça uma api para ler o código e o preço de 15 produtos, calcular e escrever:
+    • O maior preço lido; e
+    • A média aritmética dos preços dos produtos.
+*/
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------
+
 
 
 
