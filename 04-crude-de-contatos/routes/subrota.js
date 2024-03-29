@@ -1,50 +1,26 @@
-//importa o modulo do express
+// importa o modulo do express
 const express = require('express')
-//criando um router
+// criando um router
 const router = express.Router()
 
-
-//crio as rotas e as lógicas
-router.get('/subrota', (req, res)=>{
-
-res.send('tutorial get')
-
+// crio as rotas e as lógicas
+router.get('/subrota', (req, res) => {
+    res.send("subrota GET")
 })
 
-router.post('/subrota', (req, res)=>{
-
-res.send('tutorial post')
-
+router.post('/subrota', (req, res) => {
+    res.send("subrota POST")
 })
 
-
-router.put('/subrota', (req, res)=>{
-
-    res.send('testando put')
-    
-    })
-
-router.patch('/subrota', (req, res)=>{
-
-    res.send('testando delete')
-            
+router.put('/subrota', (req, res) => {
+    res.send("subrota PUT")
 })
 
-router.delete('/subrota', (req, res)=>{
-
-    res.send('testando delete')
-        
+router.delete('/subrota', (req, res) => {
+    res.send("subrota DELETE")
 })
 
-
-//exporto o router
-//este router também é um middleware
+// exporto o router
 module.exports = router
 
-
-
-
-
-
-
-
+// este router tbm é um middleware 
