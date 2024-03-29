@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 
@@ -71,15 +72,48 @@ app.post('/exercicio1', (requisicao, resposta) => {
 
 
 
+app.post("/exercicio7", (req, res)=>{
+
+const corpo = req.body
+let listaProdutos = []
+
+corpo.forEach(produto => {
+    listaProdutos.push(produto)
+}) //forEach é um laço for que irá percorrer toda a aplicação, "produto" irá percorrer o array
+
+let soma = 0
+listaProdutos.forEach(produto => {
+    soma = soma + produto.preco //produto.preco soma os valores da array
+})
+
+const media = soma / listaProdutos.length
+
+//const maior = Math.max.apply(null, listaProdutos.map(produto => produto.preco))
+
+listaProdutos.forEach(produto => {
+
+  if(produto.preco > maiorPreco){
+    maiorPreco = produto.preco
+  }
+
+
+})
+
+const resultado = {
+    precoMedio: media.toFixed(2),
+    maiorPreco: maiorPreco
+}
 
 
 
 
 
+res.json(resultado) //envia o objeto em forma de json
 
 
 
 
+})
 
 //start da aplicação
 
