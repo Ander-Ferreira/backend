@@ -1,0 +1,34 @@
+[
+    {
+    "Nome": "Porcelanato",
+    "codigo": 1,
+    "preco": 20.36
+    
+    },
+    {
+     "Nome": "Cimento",
+     "codigo": 2,
+     "preco": 40.76   
+    },
+    {
+      "Nome": "Cimento",
+      "codigo": 2,
+      "preco": 40.76  
+    },
+    {
+      "Nome": "Argamassa",
+      "codigo": 3,
+      "preco": 50.76
+    },
+     {
+      "Nome": "Argamassa",
+      "codigo": 3,
+      "preco": 50.76
+    },
+     {
+      "Nome": "Argamassa",
+      "codigo": 3,
+      "preco": 50.76
+    }
+    
+]
