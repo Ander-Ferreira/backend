@@ -3,13 +3,19 @@ const express = require('express')
 const tutorial = require('./routes/tutorial')
 const subrota = require('./routes/subrota')
 const contatos = require('./routes/contatos')
+const cors = require('cors')
+
 
 // CONFIGURACAO
 const app = express()
 
+//CONFIGUERAÇÃO DE CORS
+app.use(cors({origin: '*'}))
+
 // MIDDLEWARES
 // middleware que transforma o corpo da requisição em objeto json
 // dentro da nossa aplicação
+//npm install cors
 app.use(express.json())
 
 // ROTAS
