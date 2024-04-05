@@ -172,7 +172,46 @@ app.post('/exercicio7', (req, res)=>{
     })
 
 
+    /*8. Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo com o cargo, conforme a tabela abaixo. Faça uma api que leia o salário e o código do cargo de um funcionário e calcule o seu novo salário. Se o cargo do funcionário não estiver na tabela, ele deverá receber 15% de aumento. Mostre o salário antigo, o novo salário e a diferença entre ambos.
+Código do Cargo -> Percentual:
+    • 101 -> 5%
+    • 102 -> 7,5%
+    • 103 -> 10%*/
 
+    const arrayDeSalario = []
+    let salarioCorrigido = 0
+
+    app.post('/exercicio8', (req, res)=>{
+        const requisicao = req.body
+        
+        requisicao.forEach(navegador =>{
+            arrayDeSalario.push(navegador)
+        })
+        
+        arrayDeSalario.forEach(navegador =>{
+            
+            if (navegador.codigo === 101){
+              salarioCorrigido =  (navegador.salario * 0.05) + navegador.salario
+
+            }
+        })
+
+        arrayDeSalario.forEach(navegador => {
+            if(navegador.codigo === 102){
+                salarioCorrigido = (navegador.salario * 0.075) + navegador.salario
+            }
+        } )
+
+        arrayDeSalario.forEach(navegador => {
+            if(navegador.codigo === 103){
+                salarioCorrigido = (navegador.salario * 0.1) + navegador.salario
+            }
+        })
+        const saida = {
+            salarioCorrigido: salarioCorrigido
+        }
+        res.json(saida)
+    })
 
 
 app.listen(3000, ()=>{
