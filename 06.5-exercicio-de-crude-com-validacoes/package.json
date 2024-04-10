@@ -1,0 +1,16 @@
+{
+  "name": "06.5-exercicio-de-crude-com-validacoes",
+  "version": "1.0.0",
+  "description": "exercicio de crude com validações",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
