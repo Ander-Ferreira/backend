@@ -2,13 +2,13 @@ const express = require('express')
 const app = express()
 
 //importações
-const alunos = require('./routes/alunos')
+const tarefas = require('./routes/tarefas')
 
 //middleware
 app.use(express.json())
 
 //ROTAS
-app.use(alunos)
+app.use(tarefas)
 
 
 //lógica

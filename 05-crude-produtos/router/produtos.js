@@ -78,6 +78,7 @@ router.delete('/produtos/:id', (req, res)=>{
 
 })
 
+//Atualizar - put
 router.put('/produtos/:id', (req, res)=>{
     const id = req.params.id
     const novosDados = req.body
