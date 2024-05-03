@@ -27,3 +27,4 @@ mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@minhaapi.jflvfeo.m
 app.listen(3000, ()=>{
     console.log('Api rodando em http://localhost:3000')
 })
+
