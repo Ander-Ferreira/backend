@@ -10,6 +10,9 @@ router.get('/', (req, res)=>{
 //Rotas produtos
 router.get('/produtos', produtoController.getAll)
 router.post('/produtos', produtoController.create)
+router.get('/produtos/:id', produtoController.getById)
+router.put('/produtos/:id', produtoController.update)
+router.delete('/produtos/:id', produtoController.deletar)
 
 
 
