@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 //estrutura da minha coleção
 
-const schema = mongoose.Schema(
+const schema = new mongoose.Schema(
     {
         nome: {
             type: String,
