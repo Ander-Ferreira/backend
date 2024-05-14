@@ -6,33 +6,10 @@ const Cargo = require('../models/Cargo')
 
 async function create(req, res) {
     //Usamos o try e catch apenas quando criar algo no banco de dados
+    const cargoCorpo = new Cargo(req.body)
+    const cargoSalvar = await cargoCorpo.save()
 
-    try {
-        const cargoCorpo = new Cargo(req.body)
-        const cargoSalvar = await cargoCorpo.save()
-
-        res.status(201).json(cargoSalvar)
-
-
-
-    }
-
-
-
-    catch (error) {
-        console.error('Erro ao salvar no banco de dados!', error)
-        res.status(400).json({
-
-            mensagem: "Erro ao criar um novo cargo",
-            erro: error.message
-
-
-        })
-
-
-
-    }
-
+    res.status(201).json(cargoSalvar)
 
 
 
@@ -50,41 +27,46 @@ async function getAll(req, res) {
 async function getById(req, res) {
 
     const procurarID = await Cargo.findById(req.params.id)
-    if(procurarID){
+    if (procurarID) {
         res.status(200).json(procurarID)
     }
-    else{
-        res.status(400).json({mensagem:"Cargo não encontrado!"})
+    else {
+        res.status(400).json({ mensagem: "Cargo não encontrado!" })
     }
 
 
 }
 
-async function update(req, res){
-    
-    try{
+async function update(req, res) {
 
-        const atualizarCargo = await Cargo.findByIdAndUpdate(req.params.id, req.body)
+    const atualizarCargo = await Cargo.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    if (cargoAtualizado) {
         res.status(200).json(atualizarCargo)
+    }
 
+    else {
+        res.status(404).json({ mensagem: "Cargo não atualizado!" })
 
     }
 
-    
-    catch(error){
 
-        console.error('Erro ao atualizar no banco de dados!', error)
-        res.status(404).json({mensagem:"Cargo não atualizado!"})
-
-
-    }
 
 }
 
-async function deletar(req, res){
-    
+async function deletar(req, res) {
+
     const deletarCargo = await Cargo.findByIdAndDelete(req.params.id)
-    res.status(200).json({mensagem:"Cargo excluído com sucesso!"})
+    if (deletarCargo) {
+        res.status(200).json(
+            {
+                mensagem: "Cargo excluído com sucesso!",
+                cargo: deletarCargo
+            })
+    }
+    else {
+        res.status(400).json({ mensagem: "Cargo não excluído!" })
+    }
+
 }
 
 
