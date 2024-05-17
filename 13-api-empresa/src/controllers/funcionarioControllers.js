@@ -13,15 +13,16 @@ async function create(req, res){
 
 //Buscar todos (get)
 
-async function getAll(req, res){
+async function getALL(req, res){
     
-    const buscarTODOS = await Funcionario.find().populate('cargo') //.populate('cargo') nos dará junto o cargo dos funcionários
+    const buscarTODOS = await Cargo.find().populate((['cargo', 'departamento'])) 
+    res.json(buscarTODOS) //.populate('cargo') nos dará junto o cargo dos funcionários
     res.json(buscarTODOS) 
 }
 
 //Buscar por ID (get)
 async function getById(req, res){
-    const procurarID = await Funcionario.findById(req.params.id).populate('cargo') 
+    const procurarID = await Funcionario.findById(req.params.id).populate((['cargo', 'departamento'])) 
     if(procurarID){
         res.status(200).json(procurarID)
     }
@@ -63,9 +64,11 @@ async function remove(req, res){
 
 module.exports = {
     create,
-    getAll,
+    getALL,
     getById,
     update,
     remove
 
 }
+
+
