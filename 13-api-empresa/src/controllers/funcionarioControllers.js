@@ -15,7 +15,7 @@ async function create(req, res){
 
 async function getALL(req, res){
     
-    const buscarTODOS = await Cargo.find().populate((['cargo', 'departamento'])) 
+    const buscarTODOS = await Funcionario.find().populate((['cargo', 'departamento'])) 
     res.json(buscarTODOS) //.populate('cargo') nos dará junto o cargo dos funcionários
     res.json(buscarTODOS) 
 }
