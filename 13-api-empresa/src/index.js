@@ -11,17 +11,16 @@ app.use(express.json())
 const DBconnection = require('./db/connection')
 DBconnection()
 
-//Importação de nossas rotas e Checagem
-const router = require('./routes/routes')
-const {checarTOKEN} = require('./validators/autenticacaoValidator')
-app.use(router) //preciso colocar checarTOKEN, routes    o checar Token vai checar se o usuário está logado
-
-
 //Importação de rotas de autenticação
 const autenticacaoRoutes = require('./routes/autenticacao.routes')
 app.use(autenticacaoRoutes)
 
 
+
+//Importação de nossas rotas e Checagem
+const router = require('./routes/routes')
+const {checarTOKEN} = require('./validators/autenticacaoValidator')
+app.use(router) //preciso colocar checarTOKEN, routes    o checar Token vai checar se o usuário está logado
 
 
 
