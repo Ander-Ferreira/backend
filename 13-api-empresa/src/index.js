@@ -11,9 +11,16 @@ app.use(express.json())
 const DBconnection = require('./db/connection')
 DBconnection()
 
-//Importação de nossas rotas
+//Importação de nossas rotas e Checagem
 const router = require('./routes/routes')
-app.use(router)
+const {checarTOKEN} = require('./validators/autenticacaoValidator')
+app.use(router) //preciso colocar checarTOKEN, routes    o checar Token vai checar se o usuário está logado
+
+
+//Importação de rotas de autenticação
+const autenticacaoRoutes = require('./routes/autenticacao.routes')
+app.use(autenticacaoRoutes)
+
 
 
 
@@ -21,4 +28,7 @@ app.use(router)
 app.listen(porta, ()=>{
     console.log('Aplicação rodando na porta', porta)
 })
+
+//npm install jsonwebtoken bcrypt
+
 

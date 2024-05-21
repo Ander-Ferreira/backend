@@ -20,6 +20,7 @@ const {tarefaVALIDADOR} = require('../validators/tarefaValidator')
 
 
 
+
 //Rotas de cargos
 router.post('/cargos', cargoVALIDADOR, cargoController.create)
 router.get('/cargos', cargoController.getAll)
