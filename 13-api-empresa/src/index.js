@@ -32,4 +32,6 @@ app.listen(porta, ()=>{
 
 //Bibliotecas usadas neste projeto:
 //npm install express nodemon  dotenv mongoose jsonwebtoken bcrypt
+//diagram.net, whimiscal.com, draw.io
+
 

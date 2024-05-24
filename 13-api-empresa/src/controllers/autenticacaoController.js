@@ -76,7 +76,7 @@ async function login(req, res){
 
     //Se for válida
     //Irá logar com o email do usuário, acessará a nossa senha de criptografia, e expirará o token a cada 10 minutos
-    const token = jwt.sign( {email: usuario.email}, JWT_SECRET, { expiresIn: '10m'} )
+    const token = jwt.sign( {email: usuario.email}, JWT_SECRET, { expiresIn: '1h'} )
 
     res.json(
         {
@@ -95,3 +95,6 @@ module.exports = {
 }
 
 //Exporto as funções para usar em minhas rotas de autenticação /auth/cadastrar e auth/login
+
+
+
