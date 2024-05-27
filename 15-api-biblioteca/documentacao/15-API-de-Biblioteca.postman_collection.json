@@ -1,0 +1,571 @@
+{
+	"info": {
+		"_postman_id": "98d14b50-202b-4643-81e8-6609172ea456",
+		"name": "15-API-de-Biblioteca",
+		"description": "Esta API tem o objetivo principal de simular basicamente uma loja de livros para ajudar os alunos da 2AC a terem um ponto de partida inicial para introduzir a funcionalidade de carrinho de compras, ela permite que usuários cadastrados comprem, cadastrem, busquem, e deletem livros.\n\n---\n\nConectando à porta:\n\nAo longo desta API será usado uma variável de nome \"apiUrl\" com o endereço da porta em que nossa aplicação estará rodando.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33154261"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Anderson\",\r\n    \"email\": \"anderson@gmail.com\",\r\n    \"senha\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/cadastrar",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"cadastrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"anderson@gmail.com\",\r\n    \"senha\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carrinho",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuarioId\": \"665445c8e06991e2ce41510c\",\r\n    \"produtoId\": \"6654d77e7e64484f98d4dea8\",\r\n    \"quantidade\": 3,\r\n    \"nome\": \"Senhor dos Anéis\",\r\n    \"preco\": 154.40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/carrinho",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Nesta sessão serão feitos o cadastro e login dos usuários via POST.**\n\n---\n\nOnde os campos precisam de Cadastrar precisa seguir a estrutura do seguinte modelo:\n\n{\"nome\": \"Seu usuário\", \"email: \"[seu@gmail.com](https://mailto:anderson@gmail.com)\", \"senha\":\"12345\"}\n\n---\n\n---\n\nOs de Login precisa seguir a estrutura do seguinte modelo:\n\n{ \"email: \"[seu@gmail.com](https://mailto:anderson@gmail.com)\", \"senha\":\"12345\"}\n\n---\n\nE os de Carrinho precisa seguir a estrutura do seguinte modelo:\n\n{ \"usuarioId\": \"665445c8e06991e2ce41510c\",\n\n\"produtoId\": \"6654d77e7e64484f98d4dea8\",\n\n\"quantidade\": 5,\n\n\"nome\": \"Senhor dos Anéis\",\n\n\"preco\": 154.40}"
+		},
+		{
+			"name": "Generos",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acao\": \"Ação\"\r\n      \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/generos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/generos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Por Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/generos/6653d83b81eee0bc90300583",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"generos",
+								"6653d83b81eee0bc90300583"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Romance\": \"Romance\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/generos/6653d83b81eee0bc90300583",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"generos",
+								"6653d83b81eee0bc90300583"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis 2\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/generos/6653d83b81eee0bc90300583",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"generos",
+								"6653d83b81eee0bc90300583"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Nesta sessão será possível cadastrar os gêneros dos livros, buscar todos, buscar por ID, atualizar e deletar.**\n\n---\n\nO campo de cadastro (POST) precisa seguir a seguinte estrutura, os campos aceitos serão quatro gêneros: acao, aventura, comedia, fantasia, romance. Obs, é preferível que os gêneros sejam cadastrados um por vez, para melhor distribuição entre os livros:\n\n{ \"acao\": \"Ação\" }\n\n---\n\nPara buscar todos basta usar a variável apiUrl/generos em GET.\n\n---\n\nPara buscar por ID basta usar em GET apiUrl/generos/ id obtida no cadastro do gênero.\n\n---\n\nPara atualizar basta usar em PUT apiUrl/generos/ id obtida no cadastro do gênero, com uma requisição de corpo seguindo o mesmo modelo do cadastro.\n\n---\n\nPara deletar basta usar em DELETE apiUrl/generos/ id obtida no cadastro do gênero."
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/livros",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/livros",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Por Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/livros/6653eca189fe6",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livros",
+								"6653eca189fe6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis 2\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\",\r\n    \"autor\":\"6653ecb089fe67dff25bb19a\",\r\n    \"genero\": \"6653eca689fe67dff25bb198\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/livros/6653eca189fe67dff25bb196",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livros",
+								"6653eca189fe67dff25bb196"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis 2\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/livros/6653cf76b6b0d5dc818934eb",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livros",
+								"6653cf76b6b0d5dc818934eb"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Nesta sessão será possível cadastrar os livros, buscar todos, buscar por ID, atualizar e deletar.**\n\n---\n\nO campo de cadastro (POST) precisa seguir a seguinte estrutura, os campos aceitos serão: titulo, sinopse, idioma, ano, preco, genero, autor.\n\n{ \"titulo\": \"O senhor dos Anéis\",\n\n\"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\n\n\"idioma\":\"BR\",\n\n\"ano\":1937,\n\n\"preco\":\"R$: 154,40\",\n\n\"genero\": \"id obtido ao cadastrar genero\",\n\n\"autor\": \"id obtido ao cadastrar autor\"\n\n}\n\nObs: os campos de genero e autor são opcionais, sendo cadastrados apenas quando houver autor e gênero cadastrado.\n\n---\n\nPara buscar todos basta usar a variável apiUrl/livros em GET.\n\n---\n\nPara buscar por ID basta usar em GET apiUrl/livros/ id obtida no cadastro de livros.\n\n---\n\nPara atualizar basta usar em PUT apiUrl/livros/ id obtida no cadastro de livros, com uma requisição de corpo seguindo o mesmo modelo do cadastro.\n\n---\n\nPara deletar basta usar em DELETE apiUrl/livros/ id obtida no cadastro do gênero."
+		},
+		{
+			"name": "Autores",
+			"item": [
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": 1235,\r\n    \"sobre\": \"aaaaa\",\r\n    \"nascionalidade\": 123,\r\n    \"data_nascimento\": 1958\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autores",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autores",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Por Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autores/6653e0463987d3d53afbf093",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autores",
+								"6653e0463987d3d53afbf093"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Tolkien222\",\r\n    \"sobre\": \"Foi um escritor, professor universitário e filólogo britânico, nascido na atual África do Sul, que recebeu o título de doutor em Letras e Filologia pela Universidade de Liège e Dublin\",\r\n    \"nascionalidade\": \"Inglês\",\r\n    \"data_nascimento\": 1892,\r\n    \"livros\": \"6653eca189fe67dff25bb196\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autores/6653ecb089fe67dff25bb19a",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autores",
+								"6653ecb089fe67dff25bb19a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"O Senhor dos Anéis 2\",\r\n    \"sinopse\":\"A história narra o conflito contra o mal que se alastra pela Terra-média, através da luta de várias raças - Humanos, Anãos, Elfos, Ents e Hobbits - contra Orques, para evitar que o Anel do Poder volte às mãos de seu criador Sauron, o Senhor Sombrio.\",\r\n    \"idioma\":\"BR\",\r\n    \"ano\":1937,\r\n    \"preco\":\"R$: 154,40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autores/6653ef6a5ca12d03b244011e",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autores",
+								"6653ef6a5ca12d03b244011e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Nesta sessão será possível cadastrar os autores, buscar todos, buscar por ID, atualizar e deletar.**\n\n---\n\nO campo de cadastro (POST) precisa seguir a seguinte estrutura, os campos aceitos serão: nome, sobre, nascionalidade:\n\n{ \"nome\": \"Chico Conha\",\n\n\"sobre\": \"Sujeito perigoso\",\n\n\"nascionalidade\": \"BR\",\n\n\"data_nascimento\": 1958,\n\n\"livro\": id obtido no cadastro do livro }\n\nObs: o campo de livro é opcional, faça apenas se houver livro já cadastrado.\n\n---\n\nPara buscar todos basta usar a variável apiUrl/autores em GET.\n\n---\n\nPara buscar por ID basta usar em GET apiUrl/autores/ id obtida no cadastro de autores.\n\n---\n\nPara atualizar basta usar em PUT apiUrl/autores/ id obtida no cadastro do autor, com uma requisição de corpo seguindo o mesmo modelo do cadastro.\n\n---\n\nPara deletar basta usar em DELETE apiUrl/autores/ id obtida no cadastro do gênero."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZGVyc29uQGdtYWlsLmNvbSIsImlhdCI6MTcxNjg0Mjk0MCwiZXhwIjoxNzE2ODQ2NTQwfQ.g0prBmwotsZ4tHAyF5v_foxpA3BEpzKQsHAIHY-uiFs",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
