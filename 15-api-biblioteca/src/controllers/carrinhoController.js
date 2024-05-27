@@ -5,12 +5,7 @@ async function create(req, res) {
   try {
     const { usuarioId, produtoId, quantidade, nome, preco } = req.body
 
-    //Não descomente se eu esqueci de comentários assim, eram testes que fui fazendo ao longo do código
-    /*if (!usuarioId) {
-      return res.status(400).send("usuarioId is required")
-    }*/
-
-    // Verifica se o usuário existe
+      // Verifica se o usuário existe
     const usuario = await Usuario.findById(usuarioId)
 
     if (!usuario) {
