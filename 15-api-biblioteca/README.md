@@ -16,6 +16,7 @@
 - [x] Crud de livros
 - [x] Crud de autores
 - [x] Crud de gêneros
+- [x] Post de compras básico
 - [x] Documentação 
 
 ###Pacotes usados:
