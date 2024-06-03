@@ -5,6 +5,7 @@ const router = express.Router()
 
 
 const alunoControllers = require('../controllers/alunoControllers')
+const agendamentoControllers = require('../controllers/agendamentoControllers')
 
 
 //Importação de validators (validações)
@@ -25,6 +26,9 @@ router.get('/aluno/:id', validarID, alunoControllers.getById)
 router.put('/aluno/:id', validarID, alunoVALIDADOR, alunoControllers.update)
 router.delete('/aluno/:id', validarID, alunoControllers.remove)
 
+
+//Rota Agendamento
+router.post('/aluno/agendamento', agendamentoControllers.create)
 
 
 
