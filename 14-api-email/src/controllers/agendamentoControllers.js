@@ -28,7 +28,7 @@ async function create(req, res) {
         });
 
         
-        res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!", agendado: agendamentoSalvo })
+        res.status(201).json({ mensagem: "Usuário agendado com sucesso!", agendado: agendamentoSalvo })
     } 
     
     catch (error) {
