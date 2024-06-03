@@ -29,7 +29,9 @@ async function create(req, res) {
 
         
         res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!", agendado: agendamentoSalvo })
-    } catch (error) {
+    } 
+    
+    catch (error) {
         console.error('Erro ao enviar email!', error)
         res.status(500).json({ mensagem: "Erro ao cadastrar usuário e enviar email de agendamento" })
     }
